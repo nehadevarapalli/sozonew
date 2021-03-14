@@ -6,6 +6,7 @@ import 'user_profile.dart';
 void main() {
   runApp(
     MaterialApp(
+
       initialRoute: '/',
       debugShowCheckedModeBanner: false,
       routes: {
