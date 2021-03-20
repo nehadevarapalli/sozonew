@@ -11,11 +11,11 @@ class _MyState extends State<Home> {
   String _UserName = '';
   String _Password ='';
 
-String validator(String value){
-   if (value.trim().isEmpty) {
+String validator(String svalue){
+   if (svalue.trim().isEmpty) {
      return "empty";
    }
-   return value;
+   return svalue;
  }
 
   @override
