@@ -7,9 +7,16 @@ class Home extends StatefulWidget {
 
 class _MyState extends State<Home> {
   TextEditingController nameController = TextEditingController();
+  TextEditingController passController = TextEditingController();
   String _UserName = '';
   String _Password ='';
 
+String validator(String value){
+   if (value.trim().isEmpty) {
+     return "empty";
+   }
+   return value;
+ }
 
   @override
   Widget build(BuildContext context) {
@@ -58,7 +65,7 @@ class _MyState extends State<Home> {
                                 ),
                                 onChanged: (text) {
                                   setState(() {
-                                    _UserName = text;
+                                    _UserName = validator(text);
                                     //print(UserName);
                                     //you can access nameController in its scope to get
                                     // the value of text entered as shown below
@@ -69,14 +76,25 @@ class _MyState extends State<Home> {
                             Container(
                                 margin: EdgeInsets.fromLTRB(20,0,20,20),
                                 child: TextField(
-                                  controller: nameController,
+                                  controller: passController,
+                                  obscureText: true,
                                   decoration: InputDecoration(
                                     border: OutlineInputBorder(),
                                     labelText: 'Password',
                                   ),
+
+                                 /* TextFormField(
+                                    obscureText: true,
+                                    decoration: const InputDecoration(
+                                      labelText: 'Password',
+                                    ),*/
+
+
+
                                   onChanged: (text) {
                                     setState(() {
-                                      _Password = text;
+                                      _Password = validator(text);
+
                                       //print(UserName);
                                       //you can access nameController in its scope to get
                                       // the value of text entered as shown below
