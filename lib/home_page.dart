@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class Home extends StatelessWidget {
+class Homepage extends StatelessWidget {
   final List<String> texts = [
     'I am injured',
     'I am injured',
@@ -125,7 +125,7 @@ class Home extends StatelessWidget {
                 height: 50.0,
               ),
               Text(
-                'Not sure what to do?\nPick the below options.',
+                '   Not sure what to do?\nPick the below options.',
                 style: TextStyle(
                   fontSize: 15.0,
                 ),
@@ -153,10 +153,10 @@ class Home extends StatelessWidget {
                               BoxShadow(
                                 color: Colors.black,
                                 offset: const Offset(
-                                5.0,
-                                5.0,
+                                2.0,
+                                2.0,
                                 ), //Offset
-                                blurRadius: 10.0,
+                                blurRadius: 5.0,
                                 spreadRadius: 2.0,
                               ),
                               BoxShadow(

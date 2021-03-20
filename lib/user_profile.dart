@@ -19,7 +19,7 @@ class UserProfile extends StatelessWidget {
                   ),
                   onPressed: (){Navigator.pop(context);},
                 ),
-                IconButton(icon: Icon(Icons.map, size: 35.0),onPressed: (){Navigator.pushNamed(context, '/');},),
+                IconButton(icon: Icon(Icons.map, size: 35.0),onPressed: (){},),
                 IconButton(icon: Icon(Icons.article, size: 35.0),onPressed: (){},),
                 IconButton(icon: Icon(Icons.info_outline, size: 35.0),onPressed: (){Navigator.pop(context,'/second');}),
               ],
@@ -60,7 +60,7 @@ class UserProfile extends StatelessWidget {
                   ],
                 )
             ),
-            SizedBox(height:50),
+
             Column(
                 children:<Widget>[
                   Row(children: <Widget>[
@@ -186,7 +186,18 @@ class UserProfile extends StatelessWidget {
                         ),
                         child:Center(child: Text('Rush'))),
                   ],),
-                ]
+
+                RaisedButton.icon(
+                  icon: Icon(Icons.logout,
+                      size: 30.0,
+                  color: Colors.white,),
+                  label : Text("Logout"),
+                  textColor: Colors.white,
+                  color: Colors.redAccent,
+                  onPressed: () {Navigator.pushNamed(context, '/');
+                  },
+                ),
+              ]
             )
           ],
         )
