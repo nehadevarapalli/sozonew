@@ -1,9 +1,11 @@
 //import 'dart:js';
 
 import 'package:flutter/material.dart';
+import 'package:sozonew/articles.dart';
 import 'package:sozonew/loginpage.dart';
 import 'home_page.dart';
 import 'user_profile.dart';
+
 void main() {
   runApp(
     MaterialApp(
@@ -14,7 +16,7 @@ void main() {
         '/':(context)=>Home(),
         '/first':(context)=>Homepage(),
         '/second':(context)=>UserProfile(),
-
+        '/third':(context)=>ArticlePage(),
       },
 
     ),
