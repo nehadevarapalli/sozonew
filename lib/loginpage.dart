@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-class Home extends StatefulWidget {
+class loginpage extends StatefulWidget {
   @override
   _MyState createState() => _MyState();
 }
 
-class _MyState extends State<Home> {
+class _MyState extends State<loginpage> {
   TextEditingController nameController = TextEditingController();
   TextEditingController passController = TextEditingController();
   String _UserName = '';

@@ -11,7 +11,7 @@ void main() {
       initialRoute: '/',
       debugShowCheckedModeBanner: false,
       routes: {
-        '/':(context)=>Home(),
+        '/':(context)=>loginpage(),
         '/first':(context)=>Homepage(),
         '/second':(context)=>UserProfile(),
 
@@ -20,3 +20,10 @@ void main() {
     ),
   );
 }
+class landingclass extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container();
+  }
+}
+
