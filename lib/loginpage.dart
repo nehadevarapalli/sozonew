@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class loginpage extends StatefulWidget {
@@ -17,7 +18,16 @@ String validator(String svalue){
    }
    return svalue;
  }
-
+Future<void> _createUser() async{
+  try{
+    UserCredential userCredential = await FirebaseAuth.instance.signInAnonymously();
+  } on FirebaseAuthException catch(e){
+    print("error : $e");
+  }
+  catch(e){
+    print("error : $e");
+  }
+}
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -110,8 +120,8 @@ String validator(String svalue){
                                 decoration: BoxDecoration(
                                     color: Colors.redAccent, borderRadius: BorderRadius.circular(20)),
                                 child: FlatButton(
-                                  onPressed: () {Navigator.pushNamed(context, '/first');
-                                  },
+                                  onPressed: _createUser,
+
                                   child: Text(
                                     'Login',
                                     style: TextStyle(color: Colors.white, fontSize: 15),

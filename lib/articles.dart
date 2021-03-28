@@ -22,11 +22,14 @@ class _ArticlePageState extends State<ArticlePage> {
                   Icons.home,
                   size: 38.0,
                 ),
-                onPressed: (){Navigator.pop(context);},
+                onPressed: (){
+                  Navigator.pop(context,'/third');
+                  },
               ),
               IconButton(icon: Icon(Icons.map, size: 35.0),onPressed: (){},),
-              IconButton(icon: Icon(Icons.article, size: 35.0),onPressed: (){Navigator.pop(context,'/third');}),
-              IconButton(icon: Icon(Icons.info_outline, size: 35.0),onPressed: (){Navigator.pop(context,'/second');}),
+              IconButton(icon: Icon(Icons.article, size: 35.0),onPressed: (){}),
+              IconButton(icon: Icon(Icons.info_outline, size: 35.0),onPressed: (){Navigator.pop(context,'/third');
+              Navigator.pushNamed(context,'/second');}),
             ],
           ),
         ),

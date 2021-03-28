@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class UserProfile extends StatelessWidget {
@@ -17,11 +18,12 @@ class UserProfile extends StatelessWidget {
                     Icons.home,
                     size: 38.0,
                   ),
-                  onPressed: (){Navigator.pop(context);},
+                  onPressed: (){Navigator.pop(context,'/second');},
                 ),
                 IconButton(icon: Icon(Icons.map, size: 35.0),onPressed: (){},),
-                IconButton(icon: Icon(Icons.article, size: 35.0),onPressed: (){Navigator.pop(context,'/third');}),
-                IconButton(icon: Icon(Icons.info_outline, size: 35.0),onPressed: (){Navigator.pop(context,'/second');}),
+                IconButton(icon: Icon(Icons.article, size: 35.0),onPressed: (){Navigator.pop(context,'/second');
+                  Navigator.pushNamed(context,'/third');}),
+                IconButton(icon: Icon(Icons.info_outline, size: 35.0),onPressed: (){}),
               ],
             ),
           ),
@@ -194,7 +196,9 @@ class UserProfile extends StatelessWidget {
                   label : Text("Logout"),
                   textColor: Colors.white,
                   color: Colors.redAccent,
-                  onPressed: () {Navigator.pushNamed(context, '/');
+                  onPressed: () async {
+                    await FirebaseAuth.instance.signOut();
+
                   },
                 ),
               ]
