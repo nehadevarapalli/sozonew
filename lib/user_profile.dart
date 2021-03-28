@@ -198,6 +198,7 @@ class UserProfile extends StatelessWidget {
                   color: Colors.redAccent,
                   onPressed: () async {
                     await FirebaseAuth.instance.signOut();
+                    Navigator.pop(context,'/second');
 
                   },
                 ),
