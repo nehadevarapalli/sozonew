@@ -89,28 +89,31 @@ class _ArticleListState extends State<ArticleList>
       appBar: topAppBar,
       body: makeBody,
 
-      bottomNavigationBar: BottomAppBar(
+        bottomNavigationBar: BottomAppBar(
         child: Container(
-          margin: EdgeInsets.fromLTRB(0, 0, 0, 10),
-          child: Row(
-            mainAxisSize: MainAxisSize.max,
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: <Widget>[
-              IconButton(
-                icon: Icon(
-                  Icons.home,
-                  size: 38.0,
-                ),
-                onPressed: (){Navigator.pop(context);},
-              ),
-              IconButton(icon: Icon(Icons.map, size: 35.0),onPressed: (){},),
-              IconButton(icon: Icon(Icons.article, size: 35.0),onPressed: (){Navigator.pop(context,'/third');}),
-              IconButton(icon: Icon(Icons.info_outline, size: 35.0),onPressed: (){Navigator.pop(context,'/second');}),
-            ],
-          ),
+        margin: EdgeInsets.fromLTRB(0, 0, 0, 10),
+    child: Row(
+    mainAxisSize: MainAxisSize.max,
+    mainAxisAlignment: MainAxisAlignment.spaceAround,
+    crossAxisAlignment: CrossAxisAlignment.center,
+    children: <Widget>[
+    IconButton(
+    icon: Icon(
+    Icons.home,
+    size: 38.0,
+    ),
+    onPressed: (){
+    Navigator.pop(context,'/third');
+    },
+    ),
+    IconButton(icon: Icon(Icons.map, size: 35.0),onPressed: (){},),
+  IconButton(icon: Icon(Icons.article, size: 35.0),onPressed: (){}),
+  IconButton(icon: Icon(Icons.info_outline, size: 35.0),onPressed: (){Navigator.pop(context,'/third');
+  Navigator.pushNamed(context,'/second');}),
+  ],
+  ),
+  ),
         ),
-      ),
     );
   }
 }
