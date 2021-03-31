@@ -1,6 +1,5 @@
 # SOZO
-## _The Advanced SOS Application
-
+## __The Advanced SOS Application
 
 [![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
 
@@ -11,6 +10,11 @@ No matter where you are, when in need, SOZO can also call for help for your near
 - The Auothorities and locals are the first one to save lifes .
 - ✨Magic ✨
 
+
+> A BBC investigation revealed that
+> seriously ill and injured patients wait for more than an hour  
+> to access an Ambulance and for any medical assistance. 
+
 ## Features
 
 - Import a HTML file and watch it magically convert to Markdown
@@ -18,14 +22,7 @@ No matter where you are, when in need, SOZO can also call for help for your near
 - Import and save files from GitHub, Dropbox, Google Drive and One Drive
 - Drag and drop markdown and HTML files into Dillinger
 - Export documents as Markdown, HTML and PDF
-
-Markdown is a lightweight markup language based on the formatting conventions
-that people naturally use in email.
-As [John Gruber] writes on the [Markdown site][df1]
-
-> A BBC investigation revealed that
-> seriously ill and injured patients wait for more than an hour  
-> to access an Ambulance and for any medical assistance. 
+ 
 
 
 SOZO mainly focuses on 
@@ -54,30 +51,11 @@ Instructions on how to use them in your own application are linked below.
 
 ## Development
 
-Want to contribute? Great!
-
-Dillinger uses Gulp + Webpack for fast developing.
-Make a change in your file and instantaneously see your updates!
-
-Open your favorite Terminal and run these commands.
-
-First Tab:
-
-```sh
-node app
-```
-
-Second Tab:
-
-```sh
-gulp watch
-```
-
-(optional) Third:
-
-```sh
-karma test
-```
+Our inspiration for selecting these specific goals was to make people feel in control of their situation and that they are not alone. 
+Be it any kind of help that is needed by the person, a medical emergency, an accident, a vehicle breakdown, a disaster, or any crime incident, help is always on the way. 
+We felt like so many crimes and emergencies can be resolved easily if only the person could ask for help and with this application, they finally have a voice. 
+You can even help a person near you with the help of this application which alerts all the users and authorities near the person in need for the kind of help needed and volunteers can accept the request for help hence achieving partnership for the goals.
+`
 
 #### Building for source
 
