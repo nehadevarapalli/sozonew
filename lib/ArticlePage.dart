@@ -41,11 +41,7 @@ class ArticlePage extends StatelessWidget {
             height: MediaQuery.of(context).size.height * 0.5,
             decoration: new BoxDecoration(
               image: new DecorationImage(
-
-                
-
-                image: new AssetImage("images/staysafe.jpg"),
-
+                image: new AssetImage("assets/staysafe.jpg"),
                 fit: BoxFit.cover,
               ),
             )),
@@ -127,7 +123,7 @@ class ArticlePage extends StatelessWidget {
                   Navigator.pop(context,'/third');
                 },
               ),
-              IconButton(icon: Icon(Icons.map, size: 35.0),onPressed: (){},),
+              IconButton(icon: Icon(Icons.map, size: 35.0),onPressed: (){Navigator.pushNamed(context, '/map');},),
               IconButton(icon: Icon(Icons.article, size: 35.0),onPressed: (){}),
               IconButton(icon: Icon(Icons.info_outline, size: 35.0),onPressed: (){Navigator.pop(context,'/third');
               Navigator.pushNamed(context,'/second');}),

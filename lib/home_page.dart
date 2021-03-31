@@ -55,7 +55,7 @@ class Homepage extends StatelessWidget {
                 ),
                 onPressed: (){},
               ),
-              IconButton(icon: Icon(Icons.map, size: 35.0),onPressed: (){},),
+              IconButton(icon: Icon(Icons.map, size: 35.0),onPressed: (){Navigator.pushNamed(context, '/map');},),
               IconButton(icon: Icon(Icons.article, size: 35.0),onPressed: (){Navigator.pushNamed(context, '/third');},),
               IconButton(icon: Icon(Icons.info_outline, size: 35.0),onPressed: () {Navigator.pushNamed(context, '/second');},),
             ],

@@ -31,14 +31,6 @@ class _ArticleListState extends State<ArticleList>
       elevation: 0.1,
       backgroundColor: Colors.red,
       title: Text(widget.title),
-
-      actions: <Widget>[
-        IconButton(
-          icon: Icon(Icons.list),
-          onPressed: (){},
-        )
-      ],
-
     );
 
     ListTile makeListTile(ArticleModel article) => ListTile(
@@ -108,7 +100,7 @@ class _ArticleListState extends State<ArticleList>
                   Navigator.pop(context,'/third');
                 },
               ),
-              IconButton(icon: Icon(Icons.map, size: 35.0),onPressed: (){},),
+              IconButton(icon: Icon(Icons.map, size: 35.0),onPressed: (){Navigator.pushNamed(context, '/map');},),
               IconButton(icon: Icon(Icons.article, size: 35.0),onPressed: (){}),
               IconButton(icon: Icon(Icons.info_outline, size: 35.0),onPressed: (){Navigator.pop(context,'/third');
               Navigator.pushNamed(context,'/second');}),
