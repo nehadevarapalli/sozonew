@@ -6,6 +6,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:sozonew/ArticleList.dart';
+import 'package:sozonew/Map.dart';
 import 'package:sozonew/loginpage.dart';
 import 'home_page.dart';
 import 'user_profile.dart';
@@ -22,8 +23,9 @@ void main() {
         '/':(context)=>loginpage(),
         '/first':(context)=>Homepage(),
         '/second':(context)=>UserProfile(),
-
+        //'/third':(context)=>ArticlePage(),
         '/third':(context)=>ArticleList(title: "Safety Tips"),
+        '/map':(context)=>MapPage(),
       },
 
     ),
