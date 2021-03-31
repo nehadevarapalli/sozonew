@@ -31,12 +31,14 @@ class _ArticleListState extends State<ArticleList>
       elevation: 0.1,
       backgroundColor: Colors.red,
       title: Text(widget.title),
+
       actions: <Widget>[
         IconButton(
           icon: Icon(Icons.list),
           onPressed: (){},
         )
       ],
+
     );
 
     ListTile makeListTile(ArticleModel article) => ListTile(
