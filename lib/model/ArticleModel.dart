@@ -1,11 +1,10 @@
-
 class ArticleModel
 {
   String title;
   String content, url;
 
   ArticleModel(
-  {this.title, this.content, this.url});
+      {this.title, this.content, this.url});
 }
 
 List getArticles() {

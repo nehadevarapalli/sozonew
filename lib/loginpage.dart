@@ -1,11 +1,12 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
-class Home extends StatefulWidget {
+class loginpage extends StatefulWidget {
   @override
   _MyState createState() => _MyState();
 }
 
-class _MyState extends State<Home> {
+class _MyState extends State<loginpage> {
   TextEditingController nameController = TextEditingController();
   TextEditingController passController = TextEditingController();
   String _UserName = '';
@@ -17,6 +18,49 @@ String validator(String svalue){
    }
    return svalue;
  }
+
+  Future<void> _createUser() async{
+    try{
+      UserCredential userCredential = await FirebaseAuth.instance.signInAnonymously();
+    } on FirebaseAuthException catch(e){
+      print("error : $e");
+    }
+    catch(e){
+      print("error : $e");
+    }
+  }
+/*  Future<void> _createActUser() async{
+
+    FirebaseAuth auth = FirebaseAuth.instance;
+    await auth.verifyPhoneNumber(
+      phoneNumber: '+44 7123 123 456',
+        verificationCompleted: (PhoneAuthCredential credential) async {
+          // ANDROID ONLY!
+
+          // Sign the user in (or link) with the auto-generated credential
+          await auth.signInWithCredential(credential);
+        },
+        verificationFailed: (FirebaseAuthException e) {
+          if (e.code == 'invalid-phone-number') {
+            print('The provided phone number is not valid.');
+          };
+          codeSent: (String verificationId, int resendToken) async {
+            // Update the UI - wait for the user to enter the SMS code
+            String smsCode = 'xxxx';
+
+            // Create a PhoneAuthCredential with the code
+            PhoneAuthCredential phoneAuthCredential = PhoneAuthProvider.credential(verificationId: verificationId, smsCode: smsCode);
+
+            // Sign the user in (or link) with the credential
+            await auth.signInWithCredential(phoneAuthCredential);
+          }
+          timeout: const Duration(seconds: 60),
+    codeAutoRetrievalTimeout: (String verificationId) {
+    // Auto-resolution timed out...
+    });
+      //codeAutoRetrievalTimeout: (String verificationId) {},
+          );
+  }*/
 
   @override
   Widget build(BuildContext context) {
@@ -61,7 +105,7 @@ String validator(String svalue){
                                 controller: nameController,
                                 decoration: InputDecoration(
                                   border: OutlineInputBorder(),
-                                  labelText: 'User Name/Phone Number',
+                                  labelText: 'Phone Number',
                                 ),
                                 onChanged: (text) {
                                   setState(() {
@@ -72,6 +116,9 @@ String validator(String svalue){
                                     //UserName = nameController.text;
                                   });
                                 },
+                                onSubmitted: (text){
+                                  _UserName = text;
+                          }
                               )),
                             Container(
                                 margin: EdgeInsets.fromLTRB(20,0,20,20),
@@ -80,7 +127,7 @@ String validator(String svalue){
                                   obscureText: true,
                                   decoration: InputDecoration(
                                     border: OutlineInputBorder(),
-                                    labelText: 'Password',
+                                    labelText: 'OTP',
                                   ),
 
                                  /* TextFormField(
@@ -101,23 +148,79 @@ String validator(String svalue){
                                       //UserName = nameController.text;
                                     });
                                   },
+                                  onSubmitted: (text){
+                                    _UserName = text;
+                                  },
                                 )),
 
                           Center(
-                              child: Container(
+                              child:
+                                  Row(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Container(
+                                        height: 40,
+                                        width: 150,
+                                        decoration: BoxDecoration(
+                                            color: Colors.redAccent, borderRadius: BorderRadius.circular(20)),
+                                        child: FlatButton(
+                                          onPressed:(){},
+
+                                          child: Text(
+                                            'Login',
+                                            style: TextStyle(color: Colors.white, fontSize: 15),
+                                          ),
+                                        ),
+                                      ),
+                                      SizedBox(
+                                        width: 10,
+                                      ),
+                                      Container(
+                                        height: 40,
+                                        width: 150,
+                                        decoration: BoxDecoration(
+                                            color: Colors.redAccent, borderRadius: BorderRadius.circular(20)),
+                                        child: FlatButton(
+                                          onPressed:(){},
+
+                                          child: Text(
+                                            'Sign Up',
+                                            style: TextStyle(color: Colors.white, fontSize: 15),
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+
+
+
+                              ),
+                            Container(
+                              height: 20,
+                              width: 20,
+                              child: Center(child: Text("or")),
+                            ),
+                            Center(
+                              child:
+                              Container(
                                 height: 40,
                                 width: 200,
                                 decoration: BoxDecoration(
                                     color: Colors.redAccent, borderRadius: BorderRadius.circular(20)),
                                 child: FlatButton(
-                                  onPressed: () {Navigator.pushNamed(context, '/first');
-                                  },
+                                  onPressed: _createUser,
+
                                   child: Text(
-                                    'Login',
+                                    'Login Anonymously',
                                     style: TextStyle(color: Colors.white, fontSize: 15),
                                   ),
                                 ),
-                              ),),
+                              ),
+
+
+
+                            ),
+
                         ],
                 ),
                     ),

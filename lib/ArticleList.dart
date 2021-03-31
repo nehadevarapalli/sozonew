@@ -28,15 +28,9 @@ class _ArticleListState extends State<ArticleList>
   Widget build(BuildContext context)
   {
     final topAppBar = AppBar(
-        elevation: 0.1,
-        backgroundColor: Colors.red,
-        title: Text(widget.title),
-      actions: <Widget>[
-        IconButton(
-          icon: Icon(Icons.list),
-          onPressed: (){},
-        )
-      ],
+      elevation: 0.1,
+      backgroundColor: Colors.red,
+      title: Text(widget.title),
     );
 
     ListTile makeListTile(ArticleModel article) => ListTile(
@@ -44,22 +38,22 @@ class _ArticleListState extends State<ArticleList>
       leading: Container(
         padding: EdgeInsets.only(right: 12.0),
         decoration: new BoxDecoration(
-          border: new Border(
-            right: new BorderSide(width: 1.0, color: Colors.white))),
-      child: Icon(Icons.accessibility_new_sharp, color: Colors.white),
-        ),
+            border: new Border(
+                right: new BorderSide(width: 1.0, color: Colors.white))),
+        child: Icon(Icons.accessibility_new_sharp, color: Colors.white),
+      ),
       title: Text(
         article.title,
         style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
       ),
 
       trailing:
-        Icon(Icons.keyboard_arrow_right_rounded, color: Colors.white, size: 30.0),
+      Icon(Icons.keyboard_arrow_right_rounded, color: Colors.white, size: 30.0),
       onTap: () {
         Navigator.push(
-          context,
-          MaterialPageRoute(
-              builder: (context) => ArticlePage(article: article)));
+            context,
+            MaterialPageRoute(
+                builder: (context) => ArticlePage(article: article)));
       },
     );
 
@@ -89,31 +83,31 @@ class _ArticleListState extends State<ArticleList>
       appBar: topAppBar,
       body: makeBody,
 
-        bottomNavigationBar: BottomAppBar(
+      bottomNavigationBar: BottomAppBar(
         child: Container(
-        margin: EdgeInsets.fromLTRB(0, 0, 0, 10),
-    child: Row(
-    mainAxisSize: MainAxisSize.max,
-    mainAxisAlignment: MainAxisAlignment.spaceAround,
-    crossAxisAlignment: CrossAxisAlignment.center,
-    children: <Widget>[
-    IconButton(
-    icon: Icon(
-    Icons.home,
-    size: 38.0,
-    ),
-    onPressed: (){
-    Navigator.pop(context,'/third');
-    },
-    ),
-    IconButton(icon: Icon(Icons.map, size: 35.0),onPressed: (){},),
-  IconButton(icon: Icon(Icons.article, size: 35.0),onPressed: (){}),
-  IconButton(icon: Icon(Icons.info_outline, size: 35.0),onPressed: (){Navigator.pop(context,'/third');
-  Navigator.pushNamed(context,'/second');}),
-  ],
-  ),
-  ),
+          margin: EdgeInsets.fromLTRB(0, 0, 0, 10),
+          child: Row(
+            mainAxisSize: MainAxisSize.max,
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: <Widget>[
+              IconButton(
+                icon: Icon(
+                  Icons.home,
+                  size: 38.0,
+                ),
+                onPressed: (){
+                  Navigator.pop(context,'/third');
+                },
+              ),
+              IconButton(icon: Icon(Icons.map, size: 35.0),onPressed: (){},),
+              IconButton(icon: Icon(Icons.article, size: 35.0),onPressed: (){}),
+              IconButton(icon: Icon(Icons.info_outline, size: 35.0),onPressed: (){Navigator.pop(context,'/third');
+              Navigator.pushNamed(context,'/second');}),
+            ],
+          ),
         ),
+      ),
     );
   }
 }
