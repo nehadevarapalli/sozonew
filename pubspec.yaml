@@ -22,8 +22,15 @@ environment:
 
 dependencies:
   url_launcher:
+
+  flutter_phone_direct_caller:
+
+
+
   flutter:
     sdk: flutter
+  firebase_core: "0.7.0"
+  firebase_auth: "^0.20.1"
 
 
 
