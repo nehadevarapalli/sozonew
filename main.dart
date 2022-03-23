@@ -2,12 +2,12 @@
 
 //import 'dart:js';
 
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_core/firebase_core.dart';
+//import 'package:firebase_auth/firebase_auth.dart';
+//import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:sozonew/ArticleList.dart';
-import 'package:sozonew/Map.dart';
-import 'package:sozonew/loginpage.dart';
+import 'package:sozo/ArticleList.dart';
+import 'package:sozo/Map.dart';
+import 'package:sozo/loginpage.dart';
 import 'home_page.dart';
 import 'user_profile.dart';
 
@@ -16,21 +16,21 @@ void main() {
   runApp(
     MaterialApp(
 
-      initialRoute: '/land',
+      initialRoute: '/',
       debugShowCheckedModeBanner: false,
       routes: {
-        '/land':(context)=>landingclass(),
-        '/':(context)=>loginpage(),
+        '/':(context)=>Homepage(),
         '/first':(context)=>Homepage(),
         '/second':(context)=>UserProfile(),
-        '/third':(context)=>ArticleList(title: "Safety Tips"),
+        //'/third':(context)=>ArticlePage(),
+        '/third':(context)=>ArticleList(title: "Safety Tips", key: ObjectKey("Safety Tips")),
         '/map':(context)=>MapPage(),
       },
 
     ),
   );
 }
-class landingclass extends StatelessWidget {
+/*class landingclass extends StatelessWidget {
   final Future<FirebaseApp> _initialization = Firebase.initializeApp();
   @override
   Widget build(BuildContext context) {
@@ -39,31 +39,31 @@ class landingclass extends StatelessWidget {
         builder: (context,snapshot){
           if(snapshot.hasError){
             return Scaffold(
-              body: Center(
-                child:Text("Error :${snapshot.error}"),
-              )
+                body: Center(
+                  child:Text("Error :${snapshot.error}"),
+                )
             );
 
 
           }
           if(snapshot.connectionState == ConnectionState.done){
             return StreamBuilder(
-              stream: FirebaseAuth.instance.authStateChanges(),
+                stream: FirebaseAuth.instance.authStateChanges(),
 
                 builder: (context,snapshot){
-                if(snapshot.connectionState == ConnectionState.active){
-                  User user = snapshot.data;
-                  if(user == null){
-                    return loginpage();
-                  }
-                  else{
-                    return Homepage();
+                  if(snapshot.connectionState == ConnectionState.active){
+                    User? user = snapshot.data as User?;
+                    if(user == null){
+                      return Homepage();
+                    }
+                    else{
+                      return Homepage();
 
-                  }}
+                    }}
                   return Scaffold(
-                  body:Center(
-                  child: Text("Checking Authentication...."),
-                  )
+                      body:Center(
+                        child: Text("Checking Authentication...."),
+                      )
 
                   );
 
@@ -74,9 +74,9 @@ class landingclass extends StatelessWidget {
 
           }
           return Scaffold(
-            body:Center(
-              child: Text("Connecting to the app...."),
-            )
+              body:Center(
+                child: Text("Connecting to the app...."),
+              )
 
           );
 
@@ -84,4 +84,4 @@ class landingclass extends StatelessWidget {
     );
   }
 }
-
+*/
